@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: A simple CloudFormation template with a nested stack.
+
+Parameters:
+  DeployBucketName:
+    Type: String
+    Description: The prefix for the S3 bucket name where the nested stack template is stored.
+    Default: MyUniqueBucket
+
+Resources:
+  MyNestedStack:
+    Type: AWS::CloudFormation::Stack
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
+    Properties:
+      # cfn-hint: replace: \!Sub.*\/ with: "./
+      TemplateURL: !Sub "https://s3.amazonaws.com/${DeployBucketName}/child.yml"
+      Parameters:
+        BucketNamePrefix: MyUniqueBucket
