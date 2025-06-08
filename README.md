@@ -1,5 +1,3 @@
-Sure — here is the full README in Markdown format as plain text (not rendered):
-
 # CFN Hint Processor
 
 A Python CLI tool for processing AWS CloudFormation YAML templates by applying `# cfn-hint: replace:` directives. It supports reading from files (with glob patterns) or from stdin, outputs modified content (or a unified diff), offers logging, and returns detailed exit codes for automation and diagnostics.
