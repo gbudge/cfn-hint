@@ -37,7 +37,7 @@ pip install colorama
 
 ## Solution Architecture
 
-**Script:** `cfn_hint_processor.py`
+**Script:** `cfn-hint.py`
 
 ### Key Components
 
@@ -99,7 +99,7 @@ Resources:
 EOF
 
 # Run the tool
-python cfn_hint_processor.py --input template.yml
+python cfn-hint.py --input template.yml
 ```
 
 ---
@@ -152,7 +152,7 @@ BucketName: old-bucket
 
 **Command:**
 ```bash
-python cfn_hint_processor.py --input template.yml
+python cfn-hint.py --input template.yml
 ```
 
 **Output:**
@@ -166,7 +166,7 @@ BucketName: new-bucket
 ### 2. Stdin Mode
 
 ```bash
-cat template.yml | python cfn_hint_processor.py --stdin
+cat template.yml | python cfn-hint.py --stdin
 ```
 
 ---
@@ -174,7 +174,7 @@ cat template.yml | python cfn_hint_processor.py --stdin
 ### 3. Output to Directory
 
 ```bash
-python cfn_hint_processor.py --input 'configs/**/*.yml' --output-dir out/
+python cfn-hint.py --input 'configs/**/*.yml' --output-dir out/
 ```
 
 ---
@@ -182,7 +182,7 @@ python cfn_hint_processor.py --input 'configs/**/*.yml' --output-dir out/
 ### 4. Diff Mode
 
 ```bash
-python cfn_hint_processor.py --input template.yml --diff
+python cfn-hint.py --input template.yml --diff
 ```
 
 ---
